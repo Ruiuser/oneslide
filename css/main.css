@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;/*宽高=边框+内边距+内容*/
+}
+
+button {
+  background-color: #48484e;
+  padding: 6px 8px;
+  color: #d9dfdf;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 1;
+
+}
+
+
+/* Control */
+.control {
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100px;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.control .iconfont {
+  display: inline-block;
+  font-size: 40px;
+  margin: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.control:hover {
+  opacity: 1;
+}
+
+
+/* menu */
+.menu {
+  position: fixed;
+  left: 0;
+  z-index: 100;/*??*/
+  width: 180px;
+  background: #252f2d;
+  color: #747c7c;
+  height: 100vh;/*100%和100vh区别？*/
+  font-size: 13px;
+  transform: translateX(-100%);
+  transition: transform .3s;
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu .icon-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.menu .icon-close:hover {
+  color: #fff;
+}
+
+.menu .detail {
+  margin-top: 50px;
+}
+
+.menu .detail .tab {
+  padding: 8px 20px;
+  display: flex;/*弹性盒子子元素拥有相同高度*/
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu .detail .tab.active {
+  color: #fff;
+}
+
+.menu .detail .iconfont {
+  margin-right: 6px;
+  
+}
+
+/* .menu .content {
+  display: none;
+} */
+
+.menu .content {
+  position: absolute;
+  top: 0;
+  left: 180px;
+  width: calc(100vw - 180px);/* calc()允许CSS属性值进行计算*/
+  height: 100vh;
+  background: #212a29;
+  font-size: 14px;
+  transform: translateX(calc(100% + 180px));
+  transition: transform .3s;
+}
+
+.menu.open .content.active {
+  transform: translateX(0);
+}
+
+
+/* content */
+.menu .content .header {
+  font-size: 40px;
+  padding: 20px;
+  border-bottom: 1px solid #425351;
+}
+
+.menu .content .body {
+  padding: 20px;
+}
+.menu .content textarea {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  background: #283231;
+  border: none;
+  outline: none;
+  color: #aaa;
+}
+
+.menu .content button {
+  margin-top: 16px;
+}
+
+
